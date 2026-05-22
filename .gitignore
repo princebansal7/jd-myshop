@@ -1,0 +1,55 @@
+# Claude
+.claude/
+CLAUDE.md
+memory/
+**/.claude/
+**/CLAUDE.md
+
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production build
+/build
+
+# Environment variables
+.env
+.env*.local
+.env.production
+
+# Vercel
+.vercel
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+/coverage
+
+# Misc
+*.log
+.cache
+download*
+public/shop_images*

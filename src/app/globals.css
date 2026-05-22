@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-50:  #eff6ff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --bg-page: #f8fafc;
+}
+
+* { box-sizing: border-box; padding: 0; margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+::selection { background: #2563eb; color: white; }
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .section-padding { @apply py-14 md:py-20; }
+  .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  .badge-category {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-blue-50 text-blue-700 border border-blue-100;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700
+           text-white text-sm font-semibold rounded-xl transition-colors shadow-sm
+           shadow-blue-600/20;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-slate-200
+           hover:border-blue-300 hover:bg-blue-50 text-slate-700 hover:text-blue-700
+           text-sm font-medium rounded-xl transition-colors;
+  }
+
+  .product-card {
+    @apply bg-white rounded-2xl border border-slate-200 overflow-hidden
+           hover:border-blue-300 hover:shadow-lg hover:shadow-blue-900/10
+           transition-all duration-200 cursor-default;
+  }
+
+  .sidebar-item {
+    @apply w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm
+           text-slate-600 hover:bg-blue-50 hover:text-blue-700 transition-colors
+           text-left;
+  }
+  .sidebar-item.active {
+    @apply bg-blue-50 text-blue-800 font-semibold border border-blue-200;
+  }
+}
+
+/* Float keyframes (still used in hero) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float   { animation: float 4s ease-in-out infinite; }
+.animate-float-d { animation: float 4s ease-in-out 1.5s infinite; }
